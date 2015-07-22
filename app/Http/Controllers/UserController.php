@@ -30,7 +30,7 @@ class UserController extends Controller {
 	}
 
 	public function login(Request $request) {
-		if (Auth::attempt(['email' => $request->get('email'), 'password' => bcrypt($request->get('password'))])) {
+		if (Auth::attempt(['email' => $request->input('email'), 'password' => bcrypt($request->input('password'))])) {
 			$user = Auth::getUser();
 			$response = array(
 				'operation' => true,
@@ -40,13 +40,14 @@ class UserController extends Controller {
 					'role' => $user->groups
 				)
 			);
-			return response()->json($response);
+			return response($response, 200);
 		}
 		$response = array(
 			'operation' => false,
-			'message' => 'Username and password not correct'
+			'message' => 'Username and password not correct',
+            'input' => $request->input('email')
 		);
-		return response()->json($response);
+		return response($response, 400);
 	}
 
 	public function logout() {
