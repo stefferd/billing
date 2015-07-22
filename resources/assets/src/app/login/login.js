@@ -36,7 +36,7 @@
             authentication.login(vm.user.email, vm.user.password).then(
                 function(data) {
                     vm.user = undefined;
-                    $state.go('');
+                    $state.go('login');
                 }
             );
         }

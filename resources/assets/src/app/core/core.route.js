@@ -9,7 +9,10 @@
 
     function appRun(routerHelper) {
         var otherwise = '/login';
-        routerHelper.configureStates(getStates(), otherwise);
+        routerHelper.configureStates(
+            getStates(),
+            otherwise
+        );
     }
 
     function getStates() {

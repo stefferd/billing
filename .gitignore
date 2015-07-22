@@ -5,3 +5,6 @@ Homestead.yaml
 .idea
 
 resources/assets/node_modules
+public/assets/app
+public/assets/test-helpers
+public/assets/index.html
