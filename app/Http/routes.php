@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function() {
     return view('app');
+});
+Route::group(['prefix' => 'api/v1/'], function() {
+    Route::resource('user', 'UserController');
+    Route::resource('company', 'CompanyController');
+    Route::resource('projects', 'ProjectController');
+    Route::get('projects/bycompany/{company}', 'ProjectController@getByCompany');
+    Route::resource('miles', 'MilesController');
+    Route::resource('hours', 'TimeController');
+    Route::post('login', 'UserController@login');
+    Route::get('logout', 'UserController@logout');
 });

@@ -25,6 +25,7 @@
             logger.info('login', 'In the login function');
             authentication.login(vm.user.email, vm.user.password).then(
                 function(data) {
+                    logger.info('login', 'Response is given');
                     vm.user = data.user;
                     $state.go('dashboard');
                 }

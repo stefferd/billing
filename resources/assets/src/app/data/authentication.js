@@ -9,12 +9,10 @@
 
     /* @ngInject */
     function authentication(dataservice) {
-        var service = {
+        return {
             logout: logout,
             login: login
         };
-
-        return service;
 
         ////////////////
 
@@ -29,14 +27,7 @@
                 email: email,
                 password: password
             };
-
-            return dataservice.post('/api/v1/login', requestBody)
-                .then(
-                    function(data) {
-                        return data;
-                    }
-
-                );
+            return dataservice.post('/api/v1/login', requestBody);
         }
     }
 })();
