@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ URL::asset('assets/lib/angular-material/angular-material.css') }}" />
 	<title>Perscriptio</title>
-    <base href="/" />
 </head>
 <body>
     <div ui-view></div>
