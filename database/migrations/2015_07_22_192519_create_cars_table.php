@@ -19,6 +19,7 @@ class CreateCarsTable extends Migration
             $table->string('license');
             $table->decimal('price');
             $table->integer('user_id', false, true)->length(10);
+            $table->timestamp('delete_at');
             $table->timestamps();
         });
     }

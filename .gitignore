@@ -5,3 +5,4 @@ Homestead.yaml
 .idea
 
 resources/assets/node_modules
+resources/assets/src/lib

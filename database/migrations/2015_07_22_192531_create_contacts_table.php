@@ -18,6 +18,7 @@ class CreateContactsTable extends Migration
             $table->string('phone', 50)->nullable();
             $table->string('email', 100);
             $table->integer('company_id', false, true)->length(10);
+            $table->timestamp('delete_at');
             $table->timestamps();
         });
     }

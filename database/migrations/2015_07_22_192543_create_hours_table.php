@@ -20,6 +20,7 @@ class CreateHoursTable extends Migration
             $table->date('entry_date');
             $table->integer('user_id', false, true)->length(10);
             $table->integer('company_id', false, true)->length(10);
+            $table->timestamp('delete_at');
             $table->timestamps();
         });
     }

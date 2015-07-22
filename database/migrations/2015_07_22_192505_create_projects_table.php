@@ -21,6 +21,7 @@ class CreateProjectsTable extends Migration
             $table->smallInteger('rateType')->default(1)->nullable();
             $table->smallInteger('user_id');
             $table->smallInteger('company_id');
+            $table->timestamp('delete_at');
             $table->timestamps();
         });
     }

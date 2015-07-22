@@ -21,6 +21,7 @@ class CreateCompaniesTable extends Migration
             $table->string('registration', 50)->nullable();
             $table->string('tax', 50)->nullable();
             $table->integer('user_id', false, true)->length(10);
+            $table->timestamp('delete_at');
             $table->timestamps();
         });
     }
